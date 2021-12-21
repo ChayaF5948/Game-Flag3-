@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 7564202}
   - component: {fileID: 7564201}
   - component: {fileID: 7564200}
+  - component: {fileID: 7564204}
   - component: {fileID: 7564199}
-  - component: {fileID: 7564198}
   - component: {fileID: 7564197}
+  - component: {fileID: 7564198}
   - component: {fileID: 7564203}
   - component: {fileID: 7564196}
   m_Layer: 0
@@ -159,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 2
+  iCaught: 0
 --- !u!54 &7564197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -283,6 +285,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMyGround: 0
   myGroup: 1
+--- !u!65 &7564204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0.00000023841858}
 --- !u!1 &319270564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
+  iCaught: 0
 --- !u!114 &1319888400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3337,9 +3353,10 @@ GameObject:
   - component: {fileID: 1792210649}
   - component: {fileID: 1792210648}
   - component: {fileID: 1792210647}
+  - component: {fileID: 1792210651}
   - component: {fileID: 1792210646}
-  - component: {fileID: 1792210645}
   - component: {fileID: 1792210644}
+  - component: {fileID: 1792210645}
   - component: {fileID: 1792210650}
   - component: {fileID: 1792210643}
   m_Layer: 0
@@ -3362,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
+  iCaught: 0
 --- !u!54 &1792210644
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3486,6 +3504,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMyGround: 0
   myGroup: 1
+--- !u!65 &1792210651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792210642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: -0.00000023841858, y: -0.00000011920929, z: 0.00000023841858}
 --- !u!1 &1815677911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,9 +3723,10 @@ GameObject:
   - component: {fileID: 2055345206}
   - component: {fileID: 2055345205}
   - component: {fileID: 2055345204}
+  - component: {fileID: 2055345208}
   - component: {fileID: 2055345203}
-  - component: {fileID: 2055345202}
   - component: {fileID: 2055345201}
+  - component: {fileID: 2055345202}
   - component: {fileID: 2055345207}
   - component: {fileID: 2055345200}
   m_Layer: 0
@@ -3717,6 +3749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 3
+  iCaught: 0
 --- !u!54 &2055345201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3841,6 +3874,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMyGround: 0
   myGroup: 1
+--- !u!65 &2055345208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055345199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0.00000023841858}
 --- !u!1001 &4699068260413064103
 PrefabInstance:
   m_ObjectHideFlags: 0
