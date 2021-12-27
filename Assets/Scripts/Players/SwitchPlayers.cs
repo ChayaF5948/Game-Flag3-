@@ -141,11 +141,5 @@ public class SwitchPlayers : MonoBehaviour
             }
         }
     }
-    //private void WhichPlayerControl (PlayerNumber player ,int currentPlayer)
-    //{
-    //    if( player == currentPlayer)
-    //    {
-
-    //    }
-    //}
+   
 }

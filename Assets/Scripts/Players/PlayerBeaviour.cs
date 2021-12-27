@@ -6,7 +6,7 @@ public class PlayerBeaviour : MonoBehaviour
 {
     [SerializeField] private bool isMyGround;
 
-    private PlayerMovement playerMovement;
+    private  PlayerMovement playerMovement;
     private SwitchPlayers switchPlayers;
     private SwitchPlayers2 switchPlayers2;
     
