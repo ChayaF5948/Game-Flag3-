@@ -41,10 +41,7 @@ public class SwitchPlayers : MonoBehaviour
         {
             playerMovement.enabled = false;
         }
-        if (playerNumber == PlayerNumber.Player4)
-        {
-            playerMovement.enabled = false;
-        }
+       
 
 
 
@@ -68,11 +65,7 @@ public class SwitchPlayers : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
-
+           
 
 
         }
@@ -92,10 +85,7 @@ public class SwitchPlayers : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
+            
 
         }
 
@@ -114,32 +104,10 @@ public class SwitchPlayers : MonoBehaviour
             {
                 playerMovement.enabled = true;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
+            
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && !iCaught)
-        {
-
-            if (playerNumber == PlayerNumber.Player1)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player2)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player3)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = true;
-            }
-        }
+      
     }
    
 }

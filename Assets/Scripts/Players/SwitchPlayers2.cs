@@ -37,13 +37,7 @@ public class SwitchPlayers2 : MonoBehaviour
         {
             playerMovement.enabled = false;
         }
-        if (playerNumber == PlayerNumber.Player4)
-        {
-            playerMovement.enabled = false;
-        }
-
-
-
+     
     }
 
     // Update is called once per frame
@@ -64,13 +58,7 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
-
-
-
+        
         }
 
         else if (Input.GetKeyDown(KeyCode.Keypad2) && !iCaught)
@@ -88,11 +76,7 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
-
+          
         }
 
         else if (Input.GetKeyDown(KeyCode.Keypad3) && !iCaught)
@@ -110,10 +94,7 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = true;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = false;
-            }
+           
         }
 
         else if (Input.GetKeyDown(KeyCode.Keypad4) && !iCaught)
@@ -131,10 +112,7 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-            if (playerNumber == PlayerNumber.Player4)
-            {
-                playerMovement.enabled = true;
-            }
+           
         }
     }
 }
