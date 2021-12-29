@@ -10,7 +10,7 @@ public class SwitchPlayers : MonoBehaviour
     private PlayerNumber playerNumber;
     private PlayerMovement playerMovement;
 
-    private int[] namberPlayer;
+    //private int[] namberPlayer;
 
 
     [SerializeField]
@@ -106,8 +106,6 @@ public class SwitchPlayers : MonoBehaviour
             }
             
         }
-
-      
     }
    
 }
