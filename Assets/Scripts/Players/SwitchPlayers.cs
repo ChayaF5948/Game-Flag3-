@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwitchPlayers : MonoBehaviour
 {
+    [SerializeField]
+    private KeyCode playerContral;
 
 
     [SerializeField]
@@ -51,7 +53,7 @@ public class SwitchPlayers : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !iCaught)
+        if (Input.GetKeyDown(playerContral) && !iCaught)
         {
             if (playerNumber == PlayerNumber.Player1)
             {
@@ -70,7 +72,7 @@ public class SwitchPlayers : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && !iCaught)
+        else if (Input.GetKeyDown(playerContral) && !iCaught)
         {
             //witchPlayer[1] = curnetPlayer;
             if (playerNumber == PlayerNumber.Player1)
@@ -89,7 +91,7 @@ public class SwitchPlayers : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && !iCaught)
+        else if (Input.GetKeyDown(playerContral) && !iCaught)
         {
             //witchPlayer[2] = curnetPlayer;
             if (playerNumber == PlayerNumber.Player1)
