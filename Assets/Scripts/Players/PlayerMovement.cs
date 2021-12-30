@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
+    [SerializeField] private PlayerHPdata playerHPdata;
     
-
     private void Start()
     {
 
@@ -40,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        playerHPdata.Bullets = 5;
+        Debug.Log("Bullet" + playerHPdata.Bullets);
+
         if(myGroup == Groups.Groupe1)
         { 
             v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed;
