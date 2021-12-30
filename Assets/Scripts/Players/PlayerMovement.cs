@@ -38,16 +38,27 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        playerHPdata.Bullets = 5;
-        Debug.Log("Bullet" + playerHPdata.Bullets);
-
-        if(myGroup == Groups.Groupe1)
-        { 
+        if (myGroup == Groups.Groupe1)
+        {
             v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed;
             h1Input = Input.GetAxis(HORIZONTAL1_AXIS) * rotateSpeed;
+        }
 
+        else if (myGroup == Groups.Groupe2)
+        {
+            v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed;
+            h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed;
+        }
+    }
+    private void FixedUpdate()
+    {
+        //playerHPdata.Bullets = 5;
+        //Debug.Log("Bullet" + playerHPdata.Bullets);
+
+        if(myGroup == Groups.Groupe1)
+        {
             Vector3 rotation = Vector3.up * h1Input;
             Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
 
@@ -57,15 +68,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(myGroup == Groups.Groupe2)
         {
-             v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed;
-             h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed;
-
              Vector3 rotation = Vector3.up * h2Input;
              Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
 
              rb.MovePosition(transform.position + transform.forward * v2Input);
              rb.MoveRotation(rb.rotation * angleRot);
-
         }
     }
 }
