@@ -4,58 +4,37 @@ using UnityEngine;
 
 public class PlayerBeaviour : MonoBehaviour
 {
-    [SerializeField] private bool isMyGround;
+    private bool isMyGround;
+    private bool isTrigger;
 
     private  PlayerMovement playerMovement;
     private SwitchPlayers switchPlayers;
-    private SwitchPlayers2 switchPlayers2;
-    
+
+    private const string AREA_GROUPE1 = "AreaGroupe1";
+    private const string AREA_GROUPE2 = "AreaGroupe2";
     public Groups myGroup;
+
+    
 
     private void Start()
     {
-
+        isTrigger = this.GetComponent<BoxCollider>().isTrigger;
+        isTrigger = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (myGroup == Groups.Groupe2)
+        
+         if (myGroup == Groups.Groupe1)
         {
 
-
-            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("AreaGroupe2"))
-            {
-                isMyGround = true;
-
-                this.GetComponent<BoxCollider>().isTrigger = false;
-            }
-
-            else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("AreaGroupe1"))
-            {
-                isMyGround = false;
-
-                this.GetComponent<BoxCollider>().isTrigger = true;
-            }
+            CheckIfMyArea(collision, AREA_GROUPE1, AREA_GROUPE2);
         }
-
-        else if (myGroup == Groups.Groupe1)
+       
+        else if (myGroup == Groups.Groupe2)
         {
+            CheckIfMyArea(collision, AREA_GROUPE2, AREA_GROUPE1);
 
-
-            if (collision.collider.gameObject.layer == LayerMask.NameToLayer("AreaGroupe2"))
-            {
-                isMyGround = false;
-
-                this.GetComponent<BoxCollider>().isTrigger = true;
-            }
-
-            else if (collision.collider.gameObject.layer == LayerMask.NameToLayer("AreaGroupe1"))
-            {
-                isMyGround = true;
-                this.GetComponent<BoxCollider>().isTrigger = false;
-
-            }
         }
-
 
 
     }
@@ -72,44 +51,48 @@ public class PlayerBeaviour : MonoBehaviour
             MovmentStop(other);
         }
 
-        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 && switchPlayers.Icaught|| myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 && switchPlayers2.Icaught)
+        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 && switchPlayers.Icaught|| myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 && switchPlayers.Icaught)
         {
             Debug.Log("You are free!!");
             MovmentAble(other);
         }
-       
 
     }
+
+    private void CheckIfMyArea(Collision area, string areaName1, string areaName2)
+    {
+
+        if (area.collider.gameObject.layer == LayerMask.NameToLayer(areaName1))
+        {
+            isMyGround = true;
+
+            isTrigger = false;
+        }
+
+        else if (area.collider.gameObject.layer == LayerMask.NameToLayer(areaName2))
+        {
+            isMyGround = false;
+
+            isTrigger = true;
+        }
+    }
+
     private void MovmentStop(Collider player)
     {
         Debug.Log("I catched you!");
         playerMovement.enabled = false;
-        if(myGroup == Groups.Groupe1)
-        {
+      
             switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
             switchPlayers.Icaught = true;
-        }
-        else if (myGroup == Groups.Groupe2)
-        {
-            switchPlayers2 = player.gameObject.GetComponent<SwitchPlayers2>();
-            switchPlayers2.Icaught = true;
-        }
     }
+
     private void MovmentAble(Collider player)
     {
         Debug.Log("You are free!!");
-        if (myGroup == Groups.Groupe1)
-        {
+       
             switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
             switchPlayers.Icaught = false;
-        }
-        else if (myGroup == Groups.Groupe2)
-        {
-            switchPlayers2 = player.gameObject.GetComponent<SwitchPlayers2>();
-            switchPlayers2.Icaught = false;
-        }
+        
+       
     }
-
-
-
 }
