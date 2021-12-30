@@ -10,8 +10,8 @@ using UnityEngine;
     }
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float rotateSpeed = 100f;
+    [SerializeField] private float moveSpeed = 80f;
+    [SerializeField] private float rotateSpeed = 300f;
 
     private const string VERTICAL1_AXIS = "Vertical1";
     private const string HORIZONTAL1_AXIS = "Horizontal1";
@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public Groups myGroup;
 
     private Rigidbody rb;
+
+    
 
     private void Start()
     {
