@@ -12,7 +12,7 @@ public class Flag : MonoBehaviour
     [SerializeField]
     private Material[] area;
 
-    private bool isChangeFlag = false;
+    private bool isChangeFlag = true;
 
     
     public bool IsChangeFlag
@@ -26,34 +26,33 @@ public class Flag : MonoBehaviour
             isChangeFlag = value;
         }
     }
-
-
-
-    //[SerializeField] private LayerMask areaMask;
     private void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        //areaMask = GetComponentInParent<LayerMask>();
+        
     }
 
 
     private void OnCollisionEnter(Collision other)
 
     {
-
-        if (other.gameObject.CompareTag("Player"))
+        if(isChangeFlag)
         {
-            PlayerMovement playerMovement = other.gameObject.GetComponentInChildren<PlayerMovement>();
-            Groups groupes = playerMovement.myGroup;
-            if (groupes == Groups.Groupe1 && myFlag == Groups.Groupe2)
-            {   
-                ChangeArea();
-                ChangeFlag();  
-            }
-            else if (groupes == Groups.Groupe2 && myFlag == Groups.Groupe1)
+            StartCoroutine(WhaitWhenConquered());
+            if (other.gameObject.CompareTag("Player"))
             {
-                ChangeArea();
-                ChangeFlag();
+                PlayerMovement playerMovement = other.gameObject.GetComponentInChildren<PlayerMovement>();
+                Groups groupes = playerMovement.myGroup;
+                if (groupes == Groups.Groupe1 && myFlag == Groups.Groupe2)
+                {
+                    ChangeArea();
+                    ChangeFlag();
+                }
+                else if (groupes == Groups.Groupe2 && myFlag == Groups.Groupe1)
+                {
+                    ChangeArea();
+                    ChangeFlag();
+                }
             }
         }
        
@@ -62,20 +61,25 @@ public class Flag : MonoBehaviour
 
     private void ChangeFlag()
     {
-       
-        if (myFlag == Groups.Groupe2)
-        {
-            gameManager.FlagGro1Num++;
-            gameManager.FlagGro2Num--;
-        }
-        else if (myFlag == Groups.Groupe1)
-        {
-            gameManager.FlagGro1Num--;
-            gameManager.FlagGro2Num++;
-        }
+
         gameObject.SetActive(false);
         flag.SetActive(true);
-        gameManager.IsConquered = true;
+       
+       
+            if (myFlag == Groups.Groupe2)
+            {
+                gameManager.FlagGro1Num++;
+                gameManager.FlagGro2Num--;
+            }
+            else if (myFlag == Groups.Groupe1)
+            {
+                gameManager.FlagGro1Num--;
+                gameManager.FlagGro2Num++;
+            }
+            gameManager.IsConquered = true;
+          
+       
+        
     }
 
     private void ChangeArea()
@@ -91,5 +95,12 @@ public class Flag : MonoBehaviour
             transform.parent.GetComponent<Renderer>().material = area[1];
         }
 
+    }
+
+  private IEnumerator WhaitWhenConquered()
+    {
+        isChangeFlag = false;
+        yield return new WaitForSeconds(2f);
+        isChangeFlag = true;
     }
 }

@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
     //    }
     //}
 
-    private void PlaySound(int flagsP1, int flagsP2)
+    private void PlaySound(int flagsP1, int flagsP2,bool conquered)
     {
         if (flagsP1 >= 1||flagsP2 >= 1)
         {

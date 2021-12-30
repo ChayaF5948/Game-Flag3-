@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public UnityAction<int, int> OnFlagConquered;
+    public UnityAction<int, int,bool> OnFlagConquered;
    
 
 
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("The flag Caught Group1");
             if (isConquered)
             {
-                OnFlagConquered?.Invoke(flagGro1num,flagGro2num);
+                OnFlagConquered?.Invoke(flagGro1num,flagGro2num,isConquered);
                 isConquered = false;
             }
         }
@@ -30,13 +31,25 @@ public class GameManager : MonoBehaviour
 
     public int FlagGro1Num
     {
+       
         get { return flagGro1num; }
-        set { flagGro1num = value; }
+        set { flagGro1num = value;
+        if(flagGro1num <0)
+            {
+                flagGro1num = 0;
+            }
+        }
+        
     }
     public int FlagGro2Num
     {
         get { return flagGro2num; }
-        set { flagGro2num = value; }
+        set { flagGro2num = value;
+            if (flagGro2num < 0)
+            {
+                flagGro2num = 0;
+            }
+            }
     }
 
   

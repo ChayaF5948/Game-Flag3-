@@ -18,6 +18,9 @@ public class SwitchPlayers2 : MonoBehaviour
         set { iCaught = value; }
     }
 
+    [SerializeField]
+    private KeyCode playerContral;
+
 
 
     // Start is called before the first frame update
@@ -37,14 +40,20 @@ public class SwitchPlayers2 : MonoBehaviour
         {
             playerMovement.enabled = false;
         }
-     
+        if (playerNumber == PlayerNumber.Player4)
+        {
+            playerMovement.enabled = false;
+        }
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Keypad1) && !iCaught)
+        if (Input.GetKeyDown(playerContral) && !iCaught)
         {
             if (playerNumber == PlayerNumber.Player1)
             {
@@ -58,10 +67,16 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-        
+            if (playerNumber == PlayerNumber.Player4)
+            {
+                playerMovement.enabled = false;
+            }
+
+
+
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad2) && !iCaught)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && !iCaught)
         {
             //witchPlayer[1] = curnetPlayer;
             if (playerNumber == PlayerNumber.Player1)
@@ -76,10 +91,14 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-          
+            if (playerNumber == PlayerNumber.Player4)
+            {
+                playerMovement.enabled = false;
+            }
+
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad3) && !iCaught)
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && !iCaught)
         {
             //witchPlayer[2] = curnetPlayer;
             if (playerNumber == PlayerNumber.Player1)
@@ -94,10 +113,13 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = true;
             }
-           
+            if (playerNumber == PlayerNumber.Player4)
+            {
+                playerMovement.enabled = false;
+            }
         }
 
-        else if (Input.GetKeyDown(KeyCode.Keypad4) && !iCaught)
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && !iCaught)
         {
 
             if (playerNumber == PlayerNumber.Player1)
@@ -112,7 +134,10 @@ public class SwitchPlayers2 : MonoBehaviour
             {
                 playerMovement.enabled = false;
             }
-           
+            if (playerNumber == PlayerNumber.Player4)
+            {
+                playerMovement.enabled = true;
+            }
         }
     }
 }

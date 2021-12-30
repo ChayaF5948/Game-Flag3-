@@ -66,26 +66,18 @@ public class PlayerBeaviour : MonoBehaviour
 
         
 
-        if (myGroup == Groups.Groupe1 && isMyGround && groupe == Groups.Groupe2)
+        if (myGroup == Groups.Groupe1 && isMyGround && groupe == Groups.Groupe2 || myGroup == Groups.Groupe2 && isMyGround && groupe == Groups.Groupe1)
         {
             
             MovmentStop(other);
         }
 
-        else if (myGroup == Groups.Groupe2 && isMyGround && groupe == Groups.Groupe1)
-        {
-            MovmentStop(other);
-        }
-        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 && switchPlayers.Icaught)
+        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 && switchPlayers.Icaught|| myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 && switchPlayers2.Icaught)
         {
             Debug.Log("You are free!!");
             MovmentAble(other);
         }
-        else if (myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 && switchPlayers.Icaught)
-        {
-            
-            MovmentAble(other);
-        }
+       
 
     }
     private void MovmentStop(Collider player)
@@ -117,4 +109,7 @@ public class PlayerBeaviour : MonoBehaviour
             switchPlayers2.Icaught = false;
         }
     }
+
+
+
 }
