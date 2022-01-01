@@ -156,10 +156,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7564195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700fa0bcddfa76548b5176f9aea68d24, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 259
   playerNumber: 2
+  playerMovement:
+  - {fileID: 7564198}
+  - {fileID: 1319888394}
+  - {fileID: 1792210645}
   iCaught: 0
 --- !u!54 &7564197
 Rigidbody:
@@ -192,6 +197,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 1
+  playerHPdata: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
 --- !u!136 &7564199
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -262,7 +268,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564195}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 8.988156, z: -28.1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
@@ -283,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 1
 --- !u!65 &7564204
 BoxCollider:
@@ -463,7 +468,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 49
   playerNumber: 0
+  playerMovement:
+  - {fileID: 331817575}
+  - {fileID: 1493158831}
+  - {fileID: 749393123}
   iCaught: 0
 --- !u!114 &331817572
 MonoBehaviour:
@@ -477,7 +487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 0
 --- !u!65 &331817573
 BoxCollider:
@@ -523,6 +532,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 0
+  playerHPdata: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
 --- !u!136 &331817576
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1269,7 +1279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 51
   playerNumber: 2
+  playerMovement:
+  - {fileID: 749393123}
+  - {fileID: 331817575}
+  - {fileID: 1493158831}
   iCaught: 0
 --- !u!114 &749393120
 MonoBehaviour:
@@ -1283,7 +1298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 0
 --- !u!65 &749393121
 BoxCollider:
@@ -1329,6 +1343,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 0
+  playerHPdata: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
 --- !u!136 &749393124
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2107,6 +2122,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 1
+  playerHPdata: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
 --- !u!136 &1319888395
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2195,10 +2211,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1319888392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700fa0bcddfa76548b5176f9aea68d24, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 257
   playerNumber: 0
+  playerMovement:
+  - {fileID: 1319888394}
+  - {fileID: 1792210645}
+  - {fileID: 7564198}
   iCaught: 0
 --- !u!114 &1319888400
 MonoBehaviour:
@@ -2212,7 +2233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 1
 --- !u!65 &1319888401
 BoxCollider:
@@ -2506,7 +2526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 50
   playerNumber: 1
+  playerMovement:
+  - {fileID: 1493158831}
+  - {fileID: 331817575}
+  - {fileID: 749393123}
   iCaught: 0
 --- !u!54 &1493158830
 Rigidbody:
@@ -2539,6 +2564,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 0
+  playerHPdata: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
 --- !u!136 &1493158832
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2627,7 +2653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 0
 --- !u!65 &1493158837
 BoxCollider:
@@ -2959,10 +2984,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792210642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700fa0bcddfa76548b5176f9aea68d24, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9bfd189cb3f774fbb141a1207a09be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerContral: 258
   playerNumber: 1
+  playerMovement:
+  - {fileID: 1792210645}
+  - {fileID: 1319888394}
+  - {fileID: 7564198}
   iCaught: 0
 --- !u!54 &1792210644
 Rigidbody:
@@ -2995,6 +3025,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   rotateSpeed: 200
   myGroup: 1
+  playerHPdata: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
 --- !u!136 &1792210646
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3086,7 +3117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec11c88aa1185c044914c9f09175a110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMyGround: 0
   myGroup: 1
 --- !u!65 &1792210651
 BoxCollider:

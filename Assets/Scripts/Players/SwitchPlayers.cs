@@ -8,11 +8,8 @@ public class SwitchPlayers : MonoBehaviour
     private KeyCode playerContral;
 
 
-    [SerializeField]
-    private PlayerNumber playerNumber;
-    private PlayerMovement playerMovement;
-
-    //private int[] namberPlayer;
+    [SerializeField] private PlayerNumber playerNumber;
+    [SerializeField]  private PlayerMovement[] playerMovement;
 
 
     [SerializeField]
@@ -29,24 +26,19 @@ public class SwitchPlayers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        playerMovement = GetComponent<PlayerMovement>();
         if (playerNumber == PlayerNumber.Player1)
         {
-            playerMovement.enabled = true;
+            playerMovement[0].enabled = true;
         }
         if (playerNumber == PlayerNumber.Player2)
         {
-            playerMovement.enabled = false;
+            playerMovement[0].enabled = false;
         }
         if (playerNumber == PlayerNumber.Player3)
         {
-            playerMovement.enabled = false;
+            playerMovement[0].enabled = false;
         }
        
-
-
-
     }
 
     // Update is called once per frame
@@ -55,59 +47,48 @@ public class SwitchPlayers : MonoBehaviour
 
         if (Input.GetKeyDown(playerContral) && !iCaught)
         {
-            if (playerNumber == PlayerNumber.Player1)
-            {
-                playerMovement.enabled = true;
-            }
-            if (playerNumber == PlayerNumber.Player2)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player3)
-            {
-                playerMovement.enabled = false;
-            }
-           
-
+            playerMovement[0].enabled = true;
+            playerMovement[1].enabled = false;
+            playerMovement[2].enabled = false;
 
         }
 
-        else if (Input.GetKeyDown(playerContral) && !iCaught)
-        {
-            //witchPlayer[1] = curnetPlayer;
-            if (playerNumber == PlayerNumber.Player1)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player2)
-            {
-                playerMovement.enabled = true;
-            }
-            if (playerNumber == PlayerNumber.Player3)
-            {
-                playerMovement.enabled = false;
-            }
+        //else if (Input.GetKeyDown(playerContral) && !iCaught)
+        //{
+        //    //witchPlayer[1] = curnetPlayer;
+        //    if (playerNumber == PlayerNumber.Player1)
+        //    {
+        //        playerMovement.enabled = false;
+        //    }
+        //    if (playerNumber == PlayerNumber.Player2)
+        //    {
+        //        playerMovement.enabled = true;
+        //    }
+        //    if (playerNumber == PlayerNumber.Player3)
+        //    {
+        //        playerMovement.enabled = false;
+        //    }
             
 
-        }
+        //}
 
-        else if (Input.GetKeyDown(playerContral) && !iCaught)
-        {
-            //witchPlayer[2] = curnetPlayer;
-            if (playerNumber == PlayerNumber.Player1)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player2)
-            {
-                playerMovement.enabled = false;
-            }
-            if (playerNumber == PlayerNumber.Player3)
-            {
-                playerMovement.enabled = true;
-            }
+        //else if (Input.GetKeyDown(playerContral) && !iCaught)
+        //{
+        //    //witchPlayer[2] = curnetPlayer;
+        //    if (playerNumber == PlayerNumber.Player1)
+        //    {
+        //        playerMovement.enabled = false;
+        //    }
+        //    if (playerNumber == PlayerNumber.Player2)
+        //    {
+        //        playerMovement.enabled = false;
+        //    }
+        //    if (playerNumber == PlayerNumber.Player3)
+        //    {
+        //        playerMovement.enabled = true;
+        //    }
             
-        }
+        //}
     }
    
 }
