@@ -54,10 +54,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //playerHPdata.Bullets = 5;
-        //Debug.Log("Bullet" + playerHPdata.Bullets);
 
-        if(myGroup == Groups.Groupe1)
+        Debug.Log("Bullet" + playerHPdata.Bullets);
+
+        if (myGroup == Groups.Groupe1)
         {
             Vector3 rotation = Vector3.up * h1Input;
             Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
