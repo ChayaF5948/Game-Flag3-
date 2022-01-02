@@ -1,31 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum PicUpItem
+public enum PicUpType
 {
   shoots,
-  speed
+  speed,
+  dubleSpeed
+  
 }
 
 public class AddAbility : MonoBehaviour
 {
-    [SerializeField] PicUpItem PicUpItem; 
+    [SerializeField] PicUpType type; 
   
   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            PlayerHPdata playerHPdata = other.gameObject.GetComponentInChildren<PlayerHPdata>();
+            
+            PlayerMovement datas = other.gameObject.GetComponentInChildren<PlayerMovement>();
+            PlayerHPdata playerHP = datas.playerHPdata;
 
-        if(PicUpItem == PicUpItem.shoots)
+            if (type == PicUpType.shoots)
             {
-                playerHPdata.Bullets =+ 15;
-                
+                datas.playerHPdata.Bullets = +15;
+                Debug.Log("Add bullets");
+
             }
+         Destroy(gameObject);
 
         }
 
-
-        Destroy(this);
+        
+        
     }
 }
