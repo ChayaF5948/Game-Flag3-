@@ -41,8 +41,8 @@ public class Flag : MonoBehaviour
             StartCoroutine(WhaitWhenConquered());
             if (other.gameObject.CompareTag("Player"))
             {
-                PlayerMovement playerMovement = other.gameObject.GetComponentInChildren<PlayerMovement>();
-                Groups groupes = playerMovement.myGroup;
+                PlayerMovement whichAGroup = other.gameObject.GetComponentInChildren<PlayerMovement>();
+                Groups groupes = whichAGroup.myGroup;
                 if (groupes == Groups.Groupe1 && myFlag == Groups.Groupe2)
                 {
                     ChangeArea();
