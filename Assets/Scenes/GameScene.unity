@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 7564198}
   - component: {fileID: 7564203}
   - component: {fileID: 7564196}
+  - component: {fileID: 7564205}
   m_Layer: 0
   m_Name: Player_3
   m_TagString: Player
@@ -165,6 +166,10 @@ MonoBehaviour:
   - {fileID: 7564198}
   - {fileID: 1319888394}
   - {fileID: 1792210645}
+  playerAbilitiy:
+  - {fileID: 7564205}
+  - {fileID: 1319888402}
+  - {fileID: 1792210652}
   iCaught: 0
 --- !u!54 &7564197
 Rigidbody:
@@ -303,6 +308,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: -0.00000011920929, z: 0.00000023841858}
+--- !u!114 &7564205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
+  keyShoot: 256
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &296116950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4699068261260787078, guid: 702d60a292006a645bc80e2c99fd8e3b, type: 3}
@@ -433,6 +453,7 @@ GameObject:
   - component: {fileID: 331817573}
   - component: {fileID: 331817572}
   - component: {fileID: 331817571}
+  - component: {fileID: 331817579}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Player
@@ -474,6 +495,10 @@ MonoBehaviour:
   - {fileID: 331817575}
   - {fileID: 1493158831}
   - {fileID: 749393123}
+  playerAbilitiy:
+  - {fileID: 331817579}
+  - {fileID: 1493158838}
+  - {fileID: 749393127}
   iCaught: 0
 --- !u!114 &331817572
 MonoBehaviour:
@@ -596,6 +621,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331817569}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &331817579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331817569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
+  keyShoot: 48
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &433960760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7128722685963119908, guid: 702d60a292006a645bc80e2c99fd8e3b, type: 3}
@@ -1244,6 +1284,7 @@ GameObject:
   - component: {fileID: 749393121}
   - component: {fileID: 749393120}
   - component: {fileID: 749393119}
+  - component: {fileID: 749393127}
   m_Layer: 0
   m_Name: Player_3
   m_TagString: Player
@@ -1285,6 +1326,10 @@ MonoBehaviour:
   - {fileID: 749393123}
   - {fileID: 331817575}
   - {fileID: 1493158831}
+  playerAbilitiy:
+  - {fileID: 749393127}
+  - {fileID: 331817579}
+  - {fileID: 1493158838}
   iCaught: 0
 --- !u!114 &749393120
 MonoBehaviour:
@@ -1407,6 +1452,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749393117}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &749393127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749393117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
+  keyShoot: 48
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &774624192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 412427298356166770, guid: 702d60a292006a645bc80e2c99fd8e3b, type: 3}
@@ -2084,6 +2144,7 @@ GameObject:
   - component: {fileID: 1319888401}
   - component: {fileID: 1319888400}
   - component: {fileID: 1319888399}
+  - component: {fileID: 1319888402}
   m_Layer: 0
   m_Name: Player_1
   m_TagString: Player
@@ -2220,6 +2281,10 @@ MonoBehaviour:
   - {fileID: 1319888394}
   - {fileID: 1792210645}
   - {fileID: 7564198}
+  playerAbilitiy:
+  - {fileID: 1319888402}
+  - {fileID: 1792210652}
+  - {fileID: 7564205}
   iCaught: 0
 --- !u!114 &1319888400
 MonoBehaviour:
@@ -2247,6 +2312,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1319888402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319888392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
+  keyShoot: 256
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &1345116555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4699068260403695804, guid: 702d60a292006a645bc80e2c99fd8e3b, type: 3}
@@ -2491,6 +2571,7 @@ GameObject:
   - component: {fileID: 1493158836}
   - component: {fileID: 1493158837}
   - component: {fileID: 1493158829}
+  - component: {fileID: 1493158838}
   m_Layer: 0
   m_Name: Player_2
   m_TagString: Player
@@ -2532,6 +2613,10 @@ MonoBehaviour:
   - {fileID: 1493158831}
   - {fileID: 331817575}
   - {fileID: 749393123}
+  playerAbilitiy:
+  - {fileID: 1493158838}
+  - {fileID: 331817579}
+  - {fileID: 749393127}
   iCaught: 0
 --- !u!54 &1493158830
 Rigidbody:
@@ -2667,6 +2752,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0.00000047683716}
+--- !u!114 &1493158838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493158827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 86cfae2b56eba1e48803c3f2845b9de2, type: 2}
+  keyShoot: 48
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &1518740594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,6 +3178,7 @@ GameObject:
   - component: {fileID: 1792210645}
   - component: {fileID: 1792210650}
   - component: {fileID: 1792210643}
+  - component: {fileID: 1792210652}
   m_Layer: 0
   m_Name: Player_2
   m_TagString: Player
@@ -3103,6 +3204,10 @@ MonoBehaviour:
   - {fileID: 1792210645}
   - {fileID: 1319888394}
   - {fileID: 7564198}
+  playerAbilitiy:
+  - {fileID: 1792210652}
+  - {fileID: 1319888402}
+  - {fileID: 7564205}
   iCaught: 0
 --- !u!54 &1792210644
 Rigidbody:
@@ -3241,6 +3346,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: -0.00000023841858, y: -0.00000011920929, z: 0.00000023841858}
+--- !u!114 &1792210652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792210642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790027544ce032145907ee5daea70b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 11400000, guid: 0e9df116fd6c2f4459fc8f2254380723, type: 2}
+  keyShoot: 256
+  bullet: {fileID: 4148830016951170379, guid: c14c5d6944eb5004bbe5fadb8d15d119, type: 3}
 --- !u!1 &1815677911
 GameObject:
   m_ObjectHideFlags: 0
