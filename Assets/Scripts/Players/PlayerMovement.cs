@@ -35,11 +35,13 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
+        playerHPdata.Bullets = 0;
         
     }
 
     private void Update()
     {
+
         if (myGroup == Groups.Groupe1)
         {
             v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed;
