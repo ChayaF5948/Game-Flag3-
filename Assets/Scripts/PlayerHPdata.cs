@@ -7,8 +7,8 @@ public class PlayerHPdata : ScriptableObject
     private float currentSpeed;
     private int score;
     private int bullets;
-
-    public float CurrentSpeeed
+   
+    public float CurrentSpeed
     {
         get => currentSpeed;
         set => currentSpeed = value;

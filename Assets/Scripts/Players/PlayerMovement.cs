@@ -51,9 +51,15 @@ public class PlayerMovement : MonoBehaviour
             v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed;
             h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed;
         }
-        if (playerHPdata.Bullets >=5)
+        if (playerHPdata.Bullets >= 5)
         {
             Debug.Log("Bullets" + playerHPdata.Bullets);
+        }
+
+        if(playerHPdata.Score >= 30)
+        {
+            moveSpeed *= 2;
+            Debug.Log("Add speed");
         }
     }
     private void FixedUpdate()
