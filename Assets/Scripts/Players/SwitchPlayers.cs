@@ -9,7 +9,7 @@ public class SwitchPlayers : MonoBehaviour
 
 
     [SerializeField] private PlayerNumber playerNumber;
-    [SerializeField]  private PlayerMovement[] playerMovement;
+    [SerializeField] private PlayerMovement[] playerMovement;
 
 
     [SerializeField]
