@@ -7,14 +7,22 @@ public class PlayerBeaviour : MonoBehaviour
     private bool isMyGround;
     private bool isTrigger;
 
-    private  PlayerMovement playerMovement;
+    private PlayerMovement playerMovement;
     private SwitchPlayers switchPlayers;
 
     private const string AREA_GROUPE1 = "AreaGroupe1";
     private const string AREA_GROUPE2 = "AreaGroupe2";
     public Groups myGroup;
 
-    
+
+    public bool IsMyGround
+    {
+        get => isMyGround;
+    }
+       
+
+
+
 
     private void Start()
     {

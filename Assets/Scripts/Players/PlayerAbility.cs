@@ -9,20 +9,23 @@ public class PlayerAbility : MonoBehaviour
     
     private bool canShoot = false;
     [SerializeField] GameObject bullet;
-    private float bulletSpeed = 100;
+    [SerializeField]  private float bulletSpeed = 100;
+     private PlayerBeaviour playerBeaviour;
+    
 
     
     void Start()
     {
-        
+        playerBeaviour = GetComponent<PlayerBeaviour>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(keyShoot) && playerHP.Bullets >= 1)
+        if (Input.GetKeyDown(keyShoot) && playerHP.Bullets >= 1&& playerBeaviour.IsMyGround)
         {
             canShoot = true;
+            playerHP.Bullets--;
         }
         
     }
