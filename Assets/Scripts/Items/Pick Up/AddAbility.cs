@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public enum PicUpType
 {
   shoots,
   speed,
-  dubleSpeed
-  
+  dubleSpeed  
 }
 
 public class AddAbility : MonoBehaviour
@@ -25,13 +25,20 @@ public class AddAbility : MonoBehaviour
             {
                 datas.playerHPdata.Bullets = +15;
                 Debug.Log("Add bullets");
+                Destroy(this);
 
             }
-         Destroy(gameObject);
 
+            else if(type == PicUpType.speed)
+            {
+                datas.playerHPdata.Score = +1;
+                Debug.Log("Add one score");
+                Destroy(this);
+            }
+         
         }
 
-        
+
         
     }
 }
