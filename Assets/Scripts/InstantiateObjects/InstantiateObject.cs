@@ -19,7 +19,7 @@ public class InstantiateObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        STimer = Random.Range(10f, 50f);
+        STimer = Random.Range(2f, 3f);
     }
 
     // Update is called once per frame
