@@ -29,22 +29,20 @@ public class AddAbility : MonoBehaviour
                     datas.playerHPdata.Bullets = 20;
                 }
                 Debug.Log("Add bullets");
-                Destroy(this);
+                Destroy(gameObject);
 
             }
 
-            if (type == PicUpType.speed)
+            else if (type == PicUpType.speed)
             {
                 datas.playerHPdata.Score = datas.playerHPdata.Score +1;
                 Debug.Log("Add one score");
-                Destroy(this);
+                Destroy(gameObject);
 
             }
            
          
         }
-
-
-        
+       
     }
 }
