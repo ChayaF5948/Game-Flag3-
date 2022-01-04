@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class InstantiateObject : MonoBehaviour
 {
+    
     [SerializeField]
-    private GameObject increaseSpeedForMinute;
-    [SerializeField]
-    private GameObject addShoots;
-    [SerializeField]
-    private GameObject increadeSpeed;
+    private GameObject[] objectForInstantiate;
 
     private float STimer;
 
@@ -35,7 +32,7 @@ public class InstantiateObject : MonoBehaviour
         if (isInstantaite)
         {
             var position = new Vector3(Random.Range(-26f, 13), 0, Random.Range(-15f, 64f));
-            Instantiate(increaseSpeedForMinute, position, Quaternion.identity);
+            Instantiate(objectForInstantiate[0], position, Quaternion.identity);
             StartCoroutine(Timer());
         }
 
