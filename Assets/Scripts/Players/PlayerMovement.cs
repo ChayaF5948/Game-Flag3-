@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         playerHPdata.Bullets = 0;
+        playerHPdata.Score = 0;
         
     }
 
