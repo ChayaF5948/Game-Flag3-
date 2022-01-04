@@ -10,6 +10,8 @@ public class SwitchPlayers : MonoBehaviour
 
     [SerializeField] private PlayerNumber playerNumber;
     [SerializeField] private PlayerMovement[] playerMovement;
+    [SerializeField] private PlayerAbility[] playerAbilitiy;
+   
 
 
     [SerializeField]
@@ -29,14 +31,17 @@ public class SwitchPlayers : MonoBehaviour
         if (playerNumber == PlayerNumber.Player1)
         {
             playerMovement[0].enabled = true;
+            playerAbilitiy[0].enabled = true;
         }
         if (playerNumber == PlayerNumber.Player2)
         {
             playerMovement[0].enabled = false;
+            playerAbilitiy[0].enabled = false;
         }
         if (playerNumber == PlayerNumber.Player3)
         {
             playerMovement[0].enabled = false;
+            playerAbilitiy[0].enabled = false;
         }
        
     }
@@ -50,6 +55,10 @@ public class SwitchPlayers : MonoBehaviour
             playerMovement[0].enabled = true;
             playerMovement[1].enabled = false;
             playerMovement[2].enabled = false;
+
+            playerAbilitiy[0].enabled = true;
+            playerAbilitiy[1].enabled = false;
+            playerAbilitiy[2].enabled = false;
 
         }
 
