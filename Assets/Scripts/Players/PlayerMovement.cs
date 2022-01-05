@@ -8,6 +8,7 @@ using UnityEngine;
         Groupe1,
         Groupe2
     }
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 80f;
@@ -59,16 +60,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Bullets" + playerHPdata.Bullets);
         }
 
-        if(playerHPdata.Score >= 30)
+        if(playerHPdata.Score == 30)
         {
             moveSpeed *= 2;
-            Debug.Log("Add speed");
+            rotateSpeed *= 2;
+            Debug.Log("Double speed");
         }
     }
     private void FixedUpdate()
-    {
-
-        
+    {   
 
         if (myGroup == Groups.Groupe1)
         {

@@ -36,7 +36,7 @@ public class AddAbility : MonoBehaviour
             else if (type == PicUpType.speed)
             {
                 datas.playerHPdata.Score = datas.playerHPdata.Score +1;
-                Debug.Log("Add one score");
+                Debug.Log("Score:" + datas.playerHPdata.Score);
                 Destroy(gameObject);
 
             }
