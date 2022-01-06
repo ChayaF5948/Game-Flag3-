@@ -12,6 +12,11 @@ public enum PicUpType
 public class AddAbility : MonoBehaviour
 {
     [SerializeField] PicUpType type; 
+
+    private void Start()
+    {
+        StartCoroutine(WaitForSecond());
+    }
   
   private void OnTriggerEnter(Collider other)
     {
@@ -45,4 +50,11 @@ public class AddAbility : MonoBehaviour
         }
        
     }
+
+    IEnumerator WaitForSecond()
+    {
+        yield return new WaitForSeconds(20);
+        Destroy(gameObject);
+    }
+
 }
