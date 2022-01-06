@@ -7,7 +7,7 @@ public class Flag : MonoBehaviour
     [SerializeField]
     private GameObject flag;
 
-    private GameManager gameManager;
+   [SerializeField] private GameManager gameManager;
 
     [SerializeField]
     private Material[] area;
@@ -28,7 +28,7 @@ public class Flag : MonoBehaviour
     }
     private void Start()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
+       
         
     }
 
