@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BulletGroup1
+  - BulletGroup2
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - AreaGroupe1
   - AreaGroupe2
-  - 
+  - NeutralArea
   - 
   - 
   - 
