@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Player HP", menuName = "Player HP", order = 53)]
 public class PlayerHPdata : ScriptableObject
 { 
-    private float currentSpeed;
+    private  float currentSpeed;
     private int score;
     private int bullets;
+
+    public UnityAction<int> OnAddOrDecreaseBullet;
    
     public float CurrentSpeed
     {
@@ -22,8 +24,11 @@ public class PlayerHPdata : ScriptableObject
 
     public int Bullets
     {
-        get => bullets;
-        set => bullets = value;
+        get { return bullets; }
+        set {
+             bullets = value;
+            OnAddOrDecreaseBullet?.Invoke(Bullets);  
+            }
     }
 
 }
