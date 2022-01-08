@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     private AudioClip[] audioClips;
 
     private GameManager gameManager;
+    private AddAbility AddAbility;
 
     //[SerializeField] private AudioClip playerCaught;
     //[SerializeField] private AudioClip changeFields;
@@ -44,6 +45,16 @@ public class SoundManager : MonoBehaviour
         else if(flagsP1 <= 0|| flagsP2 <= 0)
         {
             audioSource.clip = audioClips[1];
+            audioSource.Play();
+        }
+        else if (AddAbility.IsAddScore == true)
+        {
+            audioSource.clip = audioClips[3];
+            audioSource.Play();
+        }
+        else if(AddAbility.IsAddBullet == true)
+        {
+            audioSource.clip = audioClips[4];
             audioSource.Play();
         }
     }
