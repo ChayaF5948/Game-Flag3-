@@ -11,11 +11,29 @@ public enum PicUpType
 
 public class AddAbility : MonoBehaviour
 {
-    [SerializeField] PicUpType type; 
+    [SerializeField] PicUpType type;
+
+    private bool isAddBullet ;
+    private bool isAddScore ;
+
+    public bool IsAddBullet
+    {
+        get => isAddBullet;
+        set => isAddBullet = value;
+    }
+    public bool IsAddScore
+    {
+        get => isAddScore;
+        set => isAddScore = value;
+    }
+
+
 
     private void Start()
     {
         StartCoroutine(WaitForSecond());
+        isAddBullet = false;
+        isAddScore = false;
     }
   
   private void OnTriggerEnter(Collider other)
@@ -29,18 +47,21 @@ public class AddAbility : MonoBehaviour
             if (type == PicUpType.shoots)
             {
                 datas.playerHPdata.Bullets = datas.playerHPdata.Bullets +15;
+                isAddBullet = true;
+                Debug.Log("Add bullets");
+                Destroy(gameObject);
+
                 if(datas.playerHPdata.Bullets >= 20)
                 {
                     datas.playerHPdata.Bullets = 20;
                 }
-                Debug.Log("Add bullets");
-                Destroy(gameObject);
 
             }
 
             else if (type == PicUpType.speed)
             {
                 datas.playerHPdata.Score = datas.playerHPdata.Score +1;
+                isAddScore = true;
                 Debug.Log("Score:" + datas.playerHPdata.Score);
                 Destroy(gameObject);
 
