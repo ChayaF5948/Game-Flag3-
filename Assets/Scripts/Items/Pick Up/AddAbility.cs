@@ -24,10 +24,10 @@ public class AddAbility : MonoBehaviour
             if (type == PicUpType.shoots)
             {
                 datas.playerHPdata.Bullets = datas.playerHPdata.Bullets +15;
-                if(datas.playerHPdata.Bullets >= 20)
-                {
-                    datas.playerHPdata.Bullets = 20;
-                }
+                //if(datas.playerHPdata.Bullets >= 20)
+                //{
+                //    datas.playerHPdata.Bullets = 20;
+                //}
                 Debug.Log("Add bullets");
                 Destroy(gameObject);
 
