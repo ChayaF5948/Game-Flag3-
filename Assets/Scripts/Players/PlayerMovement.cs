@@ -60,12 +60,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Bullets" + playerHPdata.Bullets);
         }
 
-        if (playerHPdata.Score >= 1)
+        if(playerHPdata.Score == 30)
         {
+            moveSpeed *= 2;
+            rotateSpeed *= 2;
             Debug.Log("Double speed");
-            moveSpeed = 100f * Time.deltaTime;
-            rotateSpeed = 400f * Time.deltaTime;
-            
         }
     }
     private void FixedUpdate()
@@ -83,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         else if(myGroup == Groups.Groupe2)
         {
              Vector3 rotation = Vector3.up * h2Input;
-            Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime) ;
+             Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
 
              rb.MovePosition(transform.position + transform.forward * v2Input);
              rb.MoveRotation(rb.rotation * angleRot);
