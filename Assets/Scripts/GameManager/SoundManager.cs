@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] 
     private AudioClip[] audioClips;
 
+    [SerializeField]
     private GameManager gameManager;
     private AddAbility AddAbility;
 
@@ -22,7 +23,6 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
-        gameManager = GameManager.FindObjectOfType<GameManager>();
         gameManager.OnFlagConquered += PlaySound;
     }
 

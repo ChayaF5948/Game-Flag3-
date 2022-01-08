@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-
-public class GameManager : MonoBehaviour
+[CreateAssetMenu(fileName = "GameManeger", menuName = "Game manager", order = 54)]
+public class GameManager : ScriptableObject
 {
-    public UnityAction<int, int,bool> OnFlagConquered;
-   
+    //[SerializeField]
+    //private PlayerHPdata[] playerHp;
 
+    public UnityAction<int, int,bool> OnFlagConquered;
+  
 
     private int flagGro1num = 4;
     private int flagGro2num = 4;

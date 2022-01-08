@@ -16,8 +16,6 @@ public class PlayerBeaviour : MonoBehaviour
 
     private const string BULLET_GROUP1 = "BulletGroup1";
     private const string BULLET_GROUP2 = "BulletGroup2";
-    private bool thePlayerSpin;
-    private float speedR = 100;
 
     private Spin spin;
 
