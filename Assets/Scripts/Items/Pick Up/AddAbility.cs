@@ -15,6 +15,7 @@ public class AddAbility : MonoBehaviour
 
     private bool isAddBullet ;
     private bool isAddScore ;
+    private bool isPickUp;
 
     public bool IsAddBullet
     {
@@ -26,6 +27,11 @@ public class AddAbility : MonoBehaviour
         get => isAddScore;
         set => isAddScore = value;
     }
+    public bool IsPickUp
+    {
+        get => isPickUp;
+        set => isPickUp = value;
+    }
 
 
 
@@ -34,12 +40,14 @@ public class AddAbility : MonoBehaviour
         StartCoroutine(WaitForSecond());
         isAddBullet = false;
         isAddScore = false;
+        isPickUp = false;
     }
   
   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            isPickUp = true;
             
             PlayerMovement datas = other.gameObject.GetComponentInChildren<PlayerMovement>();
             PlayerHPdata playerHP = datas.playerHPdata;
