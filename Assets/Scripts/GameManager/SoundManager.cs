@@ -12,6 +12,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
     private AddAbility AddAbility;
+    private SwitchPlayers switchPlayers;
+    private PlayerAbility playerAbility;
 
     //[SerializeField] private AudioClip playerCaught;
     //[SerializeField] private AudioClip changeFields;
@@ -57,6 +59,22 @@ public class SoundManager : MonoBehaviour
             audioSource.clip = audioClips[4];
             audioSource.Play();
         }
+        else if(switchPlayers.Icaught == true)
+        {
+            audioSource.clip = audioClips[5];
+            audioSource.Play();
+        }
+        else if (playerAbility.CanShoot == true)
+        {
+            audioSource.clip = audioClips[6];
+            audioSource.Play();
+        }
+        else if (AddAbility.IsPickUp)
+        {
+            audioSource.clip = audioClips[7];
+            audioSource.Play();
+        }
+
     }
 
 }
