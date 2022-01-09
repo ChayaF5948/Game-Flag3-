@@ -31,4 +31,10 @@ public class PlayerHPdata : ScriptableObject
             }
     }
 
+    private void Awake()
+    {
+        bullets = 0;
+        Score = 0;
+    }
+
 }
