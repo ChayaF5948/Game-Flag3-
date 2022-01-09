@@ -49,31 +49,31 @@ public class SoundManager : MonoBehaviour
             audioSource.clip = audioClips[1];
             audioSource.Play();
         }
-        else if (AddAbility.IsAddScore == true)
-        {
-            audioSource.clip = audioClips[3];
-            audioSource.Play();
-        }
-        else if(AddAbility.IsAddBullet == true)
-        {
-            audioSource.clip = audioClips[4];
-            audioSource.Play();
-        }
-        else if(switchPlayers.Icaught == true)
-        {
-            audioSource.clip = audioClips[5];
-            audioSource.Play();
-        }
-        else if (playerAbility.CanShoot == true)
-        {
-            audioSource.clip = audioClips[6];
-            audioSource.Play();
-        }
-        else if (AddAbility.IsPickUp)
-        {
-            audioSource.clip = audioClips[7];
-            audioSource.Play();
-        }
+        //else if (AddAbility.IsAddScore)
+        //{
+        //    audioSource.clip = audioClips[3];
+        //    audioSource.Play();
+        //}
+        //else if(AddAbility.IsAddBullet )
+        //{
+        //    audioSource.clip = audioClips[4];
+        //    audioSource.Play();
+        //}
+        //else if(switchPlayers.Icaught)
+        //{
+        //    audioSource.clip = audioClips[5];
+        //    audioSource.Play();
+        //}
+        //else if (playerAbility.CanShoot)
+        //{
+        //    audioSource.clip = audioClips[6];
+        //    audioSource.Play();
+        //}
+        //else if (AddAbility.IsPickUp)
+        //{
+        //    audioSource.clip = audioClips[7];
+        //    audioSource.Play();
+        //}
 
     }
 

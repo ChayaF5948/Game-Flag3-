@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        playerHPdata.Bullets = 0;
-        playerHPdata.Score = 0;
+        //playerHPdata.Bullets = 0;
+        //playerHPdata.Score = 0;
         
     }
 
@@ -55,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
             v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed;
             h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed;
         }
-        if (playerHPdata.Bullets >= 5)
-        {
-            Debug.Log("Bullets" + playerHPdata.Bullets);
-        }
+        //if (playerHPdata.Bullets >= 5)
+        //{
+        //    Debug.Log("Bullets" + playerHPdata.Bullets);
+        //}
 
         if(playerHPdata.Score == 30)
         {

@@ -7,8 +7,15 @@ public class PlayerHPdata : ScriptableObject
     private  float currentSpeed;
     private int score;
     private int bullets;
+    private int currentbullet = 15;
+    
+
+    //private bool isShoot;
 
     public UnityAction<int> OnAddOrDecreaseBullet;
+    public UnityAction OnShoot;
+
+    public UnityAction<int> OnAddScore;
    
     public float CurrentSpeed
     {
@@ -16,20 +23,50 @@ public class PlayerHPdata : ScriptableObject
         set => currentSpeed = value;
     }
 
-    public int Score
-    {
-        get => score;
-        set => score = value;
-    }
+    //public int Score
+    //{
+    //    get => score;
+    //    set => score = value;
+    //}
 
     public int Bullets
     {
         get { return bullets; }
         set {
-             bullets = value;
-            OnAddOrDecreaseBullet?.Invoke(Bullets);  
+            if (bullets - 1 == value)
+            {
+                OnShoot?.Invoke();
+                Debug.Log("The Player shoot");
+            }
+            bullets = value;
+            OnAddOrDecreaseBullet?.Invoke(Bullets);
             }
     }
+
+    public int Score
+    {
+        get { return score; }
+        set { score = value;
+            OnAddScore?.Invoke(score);
+        }
+    }
+     
+    
+    //public bool IsShoot
+    //{
+    //    get { return isShoot; }
+    //    set { isShoot = value;
+    //        if (isShoot)
+    //        {
+    //            OnShoot?.Invoke();
+    //        }
+    //        }
+
+    //}
+
+    
+
+    
 
     private void Awake()
     {
