@@ -13,40 +13,44 @@ public class AddAbility : MonoBehaviour
 {
     [SerializeField] PicUpType type;
     [SerializeField] GameManager gameManager;
-    [SerializeField] PlayerHPdata playerData;
+    //[SerializeField] PlayerHPdata playerData;
   
   private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag ("Player"))
         {
             
             PlayerMovement datas = other.gameObject.GetComponentInChildren<PlayerMovement>();
-            PlayerHPdata playerHP = datas.playerHPdata;
+            //PlayerHPdata playerHP = datas.playerHPdata;
 
             if (type == PicUpType.shoots)
             {
-                datas.playerHPdata.Bullets = datas.playerHPdata.Bullets +15;
+                datas.playerData.Bullets = datas.playerData.Bullets +15;
                 //playerData.
                 //Debug.Log("Add bullets");
-                Destroy(gameObject);
-
-                if(datas.playerHPdata.Bullets >= 20)
+                if(datas.playerData.Bullets >= 15)
                 {
-                    datas.playerHPdata.Bullets = 20;
+                    datas.playerData.Bullets = 15;
                 }
 
             }
 
             else if (type == PicUpType.speed)
             {
-                datas.playerHPdata.Score = datas.playerHPdata.Score +1;
+                datas.playerData.Score = datas.playerData.Score +1;
                 //isAddScore = true;
-                Debug.Log("Score:" + datas.playerHPdata.Score);
-                Destroy(gameObject);
+                Debug.Log("Score:" + datas.playerData.Score);
+               
 
             }
-           
-         
+
+            else if(type == PicUpType.dubleSpeed)
+            {
+                datas.playerData.DoubleSpeed = datas.playerData.DoubleSpeed +=0.5f;
+
+            }
+            Destroy(gameObject);
+
         }
        
     }

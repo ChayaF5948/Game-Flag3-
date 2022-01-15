@@ -26,11 +26,13 @@ public class PlayerMovement : MonoBehaviour
     private float v2Input;
     private float h2Input;
 
+    //private float dubelSpeeed =1;
+
     public Groups myGroup;
 
     private Rigidbody rb;
 
-    public PlayerHPdata playerHPdata;
+    public PlayerHPdata playerData;
     
     private void Start()
     {
@@ -46,21 +48,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (myGroup == Groups.Groupe1)
         {
-            v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed;
-            h1Input = Input.GetAxis(HORIZONTAL1_AXIS) * rotateSpeed;
+            v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed * playerData.DoubleSpeed;
+            h1Input = Input.GetAxis(HORIZONTAL1_AXIS) * rotateSpeed * playerData.DoubleSpeed;
         }
 
         else if (myGroup == Groups.Groupe2)
         {
-            v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed;
-            h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed;
+            v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed /** playerData.DoubleSpeed*/;
+            h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed /** playerData.DoubleSpeed*/;
         }
         //if (playerHPdata.Bullets >= 5)
         //{
         //    Debug.Log("Bullets" + playerHPdata.Bullets);
         //}
 
-        if(playerHPdata.Score == 30)
+        if(playerData.Score == 30)
         {
             moveSpeed *= 2;
             rotateSpeed *= 2;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 448121699030572225}
   - component: {fileID: 7547116059045446866}
   - component: {fileID: 293000783414185087}
-  - component: {fileID: 7297069578882218544}
+  - component: {fileID: 3382918074823662734}
   m_Layer: 0
   m_Name: TryPicUp
   m_TagString: Untagged
@@ -91,13 +91,13 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2365019918859883573}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &7297069578882218544
+--- !u!114 &3382918074823662734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2365019918859883573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706435701919ded42838f74837d2a459, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e12fbb316599b54d93183d5be671334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
+  gameManager: {fileID: 11400000, guid: 4fa4962d7d9304b45a0884c4280cd9c1, type: 2}

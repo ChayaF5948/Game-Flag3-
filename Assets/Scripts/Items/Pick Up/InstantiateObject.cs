@@ -27,7 +27,7 @@ public class InstantiateObject : MonoBehaviour
     void Start()
     {
         STimer = Random.Range(5f, 15f);
-        S1Timer = Random.Range(3f, 7f);
+        S1Timer = Random.Range(40f, 50f);
         StartCoroutine(Timer());
         StartCoroutine(Timer1());
     }
