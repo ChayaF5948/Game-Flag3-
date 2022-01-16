@@ -4,7 +4,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Player HP", menuName = "Player HP", order = 53)]
 public class PlayerHPdata : ScriptableObject
 { 
-    private  float doubleSpeed ;
+    private  float doubleSpeed =1 ;
     private int score;
     private int bullets;
     private int currentbullet = 15;

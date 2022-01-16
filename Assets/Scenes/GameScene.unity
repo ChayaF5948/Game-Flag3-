@@ -2643,6 +2643,8 @@ MonoBehaviour:
   flagTextP2: {fileID: 622583286}
   bulletTextP1: {fileID: 2126565992}
   bulletTextP2: {fileID: 683622024}
+  scoreTextP1: {fileID: 1151413174}
+  scoreTextP2: {fileID: 780688311}
 --- !u!4 &1159102924
 Transform:
   m_ObjectHideFlags: 0

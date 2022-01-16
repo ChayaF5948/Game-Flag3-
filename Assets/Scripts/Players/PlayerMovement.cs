@@ -48,13 +48,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (myGroup == Groups.Groupe1)
         {
-            v1Input = Input.GetAxis(VERTICAL1_AXIS) * moveSpeed * playerData.DoubleSpeed;
-            h1Input = Input.GetAxis(HORIZONTAL1_AXIS) * rotateSpeed * playerData.DoubleSpeed;
+            v1Input =(Input.GetAxis(VERTICAL1_AXIS) * moveSpeed) * playerData.DoubleSpeed;
+            h1Input =(Input.GetAxis(HORIZONTAL1_AXIS) * rotateSpeed) * playerData.DoubleSpeed;
         }
 
         else if (myGroup == Groups.Groupe2)
         {
-            v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed /** playerData.DoubleSpeed*/;
+            v2Input = Input.GetAxis(VERTICAL2_AXIS) * moveSpeed/** playerData.DoubleSpeed*/;
             h2Input = Input.GetAxis(HORIZONTAL2_AXIS) * rotateSpeed /** playerData.DoubleSpeed*/;
         }
         //if (playerHPdata.Bullets >= 5)
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
             rb.MovePosition(transform.position + transform.forward * v1Input);
             rb.MoveRotation(rb.rotation * angleRot);
-             
+            
         }
         else if(myGroup == Groups.Groupe2)
         {
