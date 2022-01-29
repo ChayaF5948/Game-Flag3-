@@ -9,6 +9,8 @@ public class PlayerBeaviour : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private SwitchPlayers switchPlayers;
+    [SerializeField]
+    private GameManager gameManager;
 
     private const string AREA_GROUPE1 = "AreaGroupe1";
     private const string AREA_GROUPE2 = "AreaGroupe2";
@@ -104,6 +106,8 @@ public class PlayerBeaviour : MonoBehaviour
 
         switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
         switchPlayers.Icaught = true;
+        gameManager.ThePlayerCaught = true;
+        
     }
 
     private void MovmentAble(Collider player)

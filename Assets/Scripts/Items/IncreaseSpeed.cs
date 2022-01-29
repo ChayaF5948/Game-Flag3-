@@ -12,7 +12,7 @@ public class IncreaseSpeed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentSpeed = playerHPdata.CurrentSpeed;
+        //currentSpeed = playerHPdata.CurrentSpeed;
     }
 
     // Update is called once per frame

@@ -7,6 +7,8 @@ public class InstantiateObject : MonoBehaviour
     
     [SerializeField]
     private GameObject[] objectForInstantiate;
+    [SerializeField]
+    private GameObject[] specialPicUp;
 
     private float STimer;
 
@@ -15,11 +17,16 @@ public class InstantiateObject : MonoBehaviour
     private bool isInstantaite = true;
     private bool isInstantaite1 = true;
 
+    private float minPosX =-5f;
+    private float maxPosx = 5f;
+    private float minPosZ = 4f;
+    private float maxPosZ = 8f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        STimer = Random.Range(20f, 25f);
+        STimer = Random.Range(5f, 15f);
         S1Timer = Random.Range(40f, 50f);
         StartCoroutine(Timer());
         StartCoroutine(Timer1());
@@ -46,10 +53,13 @@ public class InstantiateObject : MonoBehaviour
 
         if (isInstantaite1)
         {
-            var position = new Vector3(Random.Range(-26f, 13f), 1, Random.Range(-15f, 60f));
-            Instantiate(objectForInstantiate[1], position, Quaternion.identity);
-
+            Vector3 newPos = new Vector3(Random.Range(minPosX, maxPosx), 0.01f, Random.Range(minPosZ, maxPosZ));
+            GameObject special = Instantiate(specialPicUp[Random.Range(0, specialPicUp.Length)]);
+            special.transform.position = newPos;
+            //var position = new Vector3(Random.Range(-26f, 13f), 1, Random.Range(-15f, 60f));
+            //Instantiate(objectForInstantiate[1], position, Quaternion.identity);
             StartCoroutine(Timer1());
+
 
         }
 
