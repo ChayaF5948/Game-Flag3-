@@ -47,32 +47,32 @@ public class SoundManager : MonoBehaviour
             audioSource.Play();
         }
 
-        else if (AddAbility.IsAddScore == true)
-        {
-            audioSource.clip = audioClips[3];
-            audioSource.Play();
-        }
-        else if(AddAbility.IsAddBullet == true)
-        {
-            audioSource.clip = audioClips[4];
-            audioSource.Play();
-        }
-        else if(switchPlayers.Icaught == true)
-        {
-            audioSource.clip = audioClips[5];
-            audioSource.Play();
-        }
-       
-        else if (playerAbility.CanShoot == true)
-        {
-            audioSource.clip = audioClips[6];
-            audioSource.Play();
-        }
-        else if (AddAbility.IsPickUp)
-        {
-            audioSource.clip = audioClips[7];
-            audioSource.Play();
-        }
+        //    else if (AddAbility.IsAddScore == true)
+        //    {
+        //        audioSource.clip = audioClips[3];
+        //        audioSource.Play();
+        //    }
+        //    else if(AddAbility.IsAddBullet == true)
+        //    {
+        //        audioSource.clip = audioClips[4];
+        //        audioSource.Play();
+        //    }
+        //    else if(switchPlayers.Icaught == true)
+        //    {
+        //        audioSource.clip = audioClips[5];
+        //        audioSource.Play();
+        //    }
+
+        //    else if (playerAbility.CanShoot == true)
+        //    {
+        //        audioSource.clip = audioClips[6];
+        //        audioSource.Play();
+        //    }
+        //    else if (AddAbility.IsPickUp)
+        //    {
+        //        audioSource.clip = audioClips[7];
+        //        audioSource.Play();
+        //    }
 
 
 

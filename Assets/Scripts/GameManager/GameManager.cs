@@ -6,7 +6,7 @@ public class GameManager : ScriptableObject
 {
 
 
-    public UnityAction<int, int,bool> OnFlagConquered;
+    //public UnityAction<int, int,bool> OnFlagConquered;
    
 
     public UnityAction<int, int, bool> OnFlagConquered;
