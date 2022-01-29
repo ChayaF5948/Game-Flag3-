@@ -28,13 +28,10 @@ public class SoundManager : MonoBehaviour
         gameManager.OnFlagConquered += PlaySound;
     }
 
-    //private void Update()
-    //{
-    //    if (IsChangeFlag)
-    //    {
-    //        Debug.Log("Play Audio");
-    //    }
-    //}
+    private void Update()
+    {
+        
+    }
 
     private void PlaySound(int flagsP1, int flagsP2,bool conquered)
     {
@@ -64,6 +61,7 @@ public class SoundManager : MonoBehaviour
             audioSource.clip = audioClips[5];
             audioSource.Play();
         }
+       
         else if (playerAbility.CanShoot == true)
         {
             audioSource.clip = audioClips[6];

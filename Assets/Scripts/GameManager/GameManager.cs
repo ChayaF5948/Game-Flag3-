@@ -8,8 +8,7 @@ public class GameManager : ScriptableObject
     //private PlayerHPdata[] playerHp;
 
     public UnityAction<int, int,bool> OnFlagConquered;
-  
-
+   
     private int flagGro1num = 4;
     private int flagGro2num = 4;
 

@@ -70,7 +70,7 @@ public class PlayerBeaviour : MonoBehaviour
             MovmentStop(other);
         }
 
-        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 && switchPlayers.Icaught || myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 && switchPlayers.Icaught)
+        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 /*&& switchPlayers.Icaught*/ || myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 /*&& switchPlayers.Icaught*/)
         {
             Debug.Log("You are free!!");
             MovmentAble(other);
@@ -108,7 +108,7 @@ public class PlayerBeaviour : MonoBehaviour
 
     private void MovmentAble(Collider player)
     {
-        Debug.Log("You are free!!");
+        //playerMovement.enabled = true;
 
         switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
         switchPlayers.Icaught = false;
