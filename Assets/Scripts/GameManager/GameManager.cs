@@ -5,16 +5,13 @@ using System.Collections;
 public class GameManager : ScriptableObject
 {
 
-<<<<<<< HEAD
+
     public UnityAction<int, int,bool> OnFlagConquered;
    
-=======
+
     public UnityAction<int, int, bool> OnFlagConquered;
     public UnityAction OnPLayerCatch;
 
-
-
->>>>>>> main
     private int flagGro1num = 4;
     private int flagGro2num = 4;
 
