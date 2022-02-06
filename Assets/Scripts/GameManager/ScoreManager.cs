@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     private int score;
+
+    public UnityAction OnScore30;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +26,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log(score);
         if(score == 30)
         {
-            Debug.Log(score);
+            OnScore30?.Invoke();
         }
     }
 }

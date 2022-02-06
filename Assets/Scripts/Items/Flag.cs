@@ -8,12 +8,13 @@ public class Flag : MonoBehaviour
     private GameObject flag;
 
    [SerializeField] private GameManager gameManager;
+   
 
     [SerializeField]
     private Material[] area;
 
     private bool isChangeFlag = true;
-
+    
     
     public bool IsChangeFlag
     {
@@ -26,11 +27,20 @@ public class Flag : MonoBehaviour
             isChangeFlag = value;
         }
     }
-    private void Start()
+     
+    private bool canChangeFlagUI = false;
+    public bool CanChangeFlagUI
     {
-       
-        
+        get
+        {
+            return canChangeFlagUI;
+        }
+        set
+        {
+            canChangeFlagUI = value;
+        }
     }
+
 
 
     private void OnCollisionEnter(Collision other)
@@ -68,13 +78,17 @@ public class Flag : MonoBehaviour
        
             if (myFlag == Groups.Groupe2)
             {
+                
                 gameManager.FlagGro1Num++;
                 gameManager.FlagGro2Num--;
+                
             }
             else if (myFlag == Groups.Groupe1)
             {
+                
                 gameManager.FlagGro1Num--;
                 gameManager.FlagGro2Num++;
+                
             }
             gameManager.IsConquered = true;
           
@@ -86,12 +100,12 @@ public class Flag : MonoBehaviour
     {
         if(myFlag == Groups.Groupe2)
         {
-            transform.parent.gameObject.layer = 6;
+            transform.parent.gameObject.layer = 8;
             transform.parent.GetComponent<Renderer>().material = area[0];
         }
         else if(myFlag == Groups.Groupe1)
         {
-            transform.parent.gameObject.layer = 7;
+            transform.parent.gameObject.layer = 9;
             transform.parent.GetComponent<Renderer>().material = area[1];
         }
 

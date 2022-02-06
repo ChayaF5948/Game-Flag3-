@@ -56,6 +56,7 @@ public class PlayerBeaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.CompareTag(BULLET_GROUP2) && myGroup == Groups.Groupe1 && !isMyGround||
           other.gameObject.CompareTag(BULLET_GROUP1) && myGroup == Groups.Groupe2&&!isMyGround)
         {
@@ -63,20 +64,29 @@ public class PlayerBeaviour : MonoBehaviour
             StartCoroutine(SpinThePlayer());
         }
 
-        playerMovement = other.gameObject.GetComponentInChildren<PlayerMovement>();
-        Groups groupe = playerMovement.myGroup;
-
-        if (myGroup == Groups.Groupe1 && isMyGround && groupe == Groups.Groupe2 || myGroup == Groups.Groupe2 && isMyGround && groupe == Groups.Groupe1)
+        if (other.gameObject.CompareTag("Player"))
         {
+            
+            playerMovement = other.gameObject.GetComponentInChildren<PlayerMovement>();
+            Groups groupe = playerMovement.myGroup;
 
-            MovmentStop(other);
+            if (myGroup == Groups.Groupe1 && isMyGround && groupe == Groups.Groupe2 || myGroup == Groups.Groupe2 && isMyGround && groupe == Groups.Groupe1)
+            {
+                
+                MovmentStop(other);
+            }
+            else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 /*&&*/ /*switchPlayers.Icaught*/ || myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 /*&& switchPlayers.Icaught*/)
+            {
+                Debug.Log("You are free!!");
+                MovmentAble(other);
+            }
+
         }
 
-        else if (myGroup == Groups.Groupe1 && groupe == Groups.Groupe1 /*&& switchPlayers.Icaught*/ || myGroup == Groups.Groupe2 && groupe == Groups.Groupe2 /*&& switchPlayers.Icaught*/)
-        {
-            Debug.Log("You are free!!");
-            MovmentAble(other);
-        }
+
+
+
+
 
 
     }
@@ -103,7 +113,7 @@ public class PlayerBeaviour : MonoBehaviour
     {
         Debug.Log("I catched you!");
         playerMovement.enabled = false;
-
+        
         switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
         switchPlayers.Icaught = true;
         gameManager.ThePlayerCaught = true;
@@ -112,7 +122,7 @@ public class PlayerBeaviour : MonoBehaviour
 
     private void MovmentAble(Collider player)
     {
-        //playerMovement.enabled = true;
+        Debug.Log("You are free!!");
 
         switchPlayers = player.gameObject.GetComponent<SwitchPlayers>();
         switchPlayers.Icaught = false;

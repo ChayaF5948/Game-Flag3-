@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField]
+    private int[] Types;
+    [SerializeField]
+    private int WhichTypeChoosed;
+
+   
+
     public void LoadScene()
     {
         SceneManager.LoadScene(1);
@@ -15,4 +22,17 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ChooseType1()
+    {
+        WhichTypeChoosed = Types[0];
+    }
+
+    public void ChooseType2()
+    {
+        WhichTypeChoosed = Types[1];
+    }
+
+   
+  
 }

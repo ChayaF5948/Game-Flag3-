@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private PlayerHPdata[] playerData;
 
+    
     [SerializeField]
     private Text flagTextP1;
     [SerializeField]
@@ -29,6 +30,7 @@ public class UiManager : MonoBehaviour
     {
         gameManager.OnFlagConquered += ChangeTheNumberFlagsText;
 
+
         playerData[0].OnAddOrDecreaseBullet += ChangeTheNumberBulletsP1Text;
         playerData[1].OnAddOrDecreaseBullet += ChangeTheNumberBulletsP2Text;
 
@@ -38,7 +40,7 @@ public class UiManager : MonoBehaviour
 
     private void ChangeTheNumberFlagsText(int flagsP1,int flagsP2,bool conquered)
     {
-        if (conquered)
+        if (conquered )
         {
             flagTextP1.text = $"flags:{flagsP1.ToString()}";
             flagTextP2.text = $"flags:{flagsP2.ToString()}";

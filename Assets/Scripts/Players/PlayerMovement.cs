@@ -34,10 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerHPdata playerData;
     
+    
     private void Start()
     {
 
         rb = GetComponent<Rigidbody>();
+        
         //playerHPdata.Bullets = 0;
         //playerHPdata.Score = 0;
         
@@ -62,12 +64,12 @@ public class PlayerMovement : MonoBehaviour
         //    Debug.Log("Bullets" + playerHPdata.Bullets);
         //}
 
-        if(playerData.Score == 30)
-        {
-            moveSpeed *= 2;
-            rotateSpeed *= 2;
-            Debug.Log("Double speed");
-        }
+        //if(playerData.Score == 30)
+        //{
+        //    moveSpeed *= 2;
+        //    rotateSpeed *= 2;
+        //    Debug.Log("Double speed");
+        //}
     }
     private void FixedUpdate()
     {   
@@ -90,4 +92,6 @@ public class PlayerMovement : MonoBehaviour
              rb.MoveRotation(rb.rotation * angleRot);
         }
     }
+
+    
 }

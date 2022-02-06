@@ -5,12 +5,10 @@ using System.Collections;
 public class GameManager : ScriptableObject
 {
 
-
-    //public UnityAction<int, int,bool> OnFlagConquered;
-   
-
     public UnityAction<int, int, bool> OnFlagConquered;
     public UnityAction OnPLayerCatch;
+
+    public UnityAction OnGameEnd;
 
     private int flagGro1num = 4;
     private int flagGro2num = 4;
@@ -71,5 +69,11 @@ public class GameManager : ScriptableObject
                 thePlayerCaught = false;
             }
         }
+    }
+
+    private void Awake()
+    {
+          flagGro1num = 4;
+          flagGro2num = 4;
     }
 }

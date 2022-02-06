@@ -11,7 +11,7 @@ public class SwitchPlayers : MonoBehaviour
     [SerializeField] private PlayerNumber playerNumber;
     [SerializeField] private PlayerMovement[] playerMovement;
     [SerializeField] private PlayerAbility[] playerAbilitiy;
-
+   
 
 
     [SerializeField]
@@ -43,7 +43,7 @@ public class SwitchPlayers : MonoBehaviour
             playerMovement[0].enabled = false;
             playerAbilitiy[0].enabled = false;
         }
-
+       
     }
 
     // Update is called once per frame
@@ -77,7 +77,7 @@ public class SwitchPlayers : MonoBehaviour
         //    {
         //        playerMovement.enabled = false;
         //    }
-
+            
 
         //}
 
@@ -96,8 +96,8 @@ public class SwitchPlayers : MonoBehaviour
         //    {
         //        playerMovement.enabled = true;
         //    }
-
+            
         //}
     }
-
+   
 }
