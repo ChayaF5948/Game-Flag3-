@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 public class Flag : MonoBehaviour
 {
     [SerializeField]
@@ -81,6 +83,11 @@ public class Flag : MonoBehaviour
                 
                 gameManager.FlagGro1Num++;
                 gameManager.FlagGro2Num--;
+
+                if(gameManager.FlagGro1Num == 8)
+                {
+                  SceneManager.LoadScene("WinScene");
+                }
                 
             }
             else if (myFlag == Groups.Groupe1)
@@ -88,8 +95,13 @@ public class Flag : MonoBehaviour
                 
                 gameManager.FlagGro1Num--;
                 gameManager.FlagGro2Num++;
-                
+
+            if (gameManager.FlagGro2Num == 8)
+            {
+                SceneManager.LoadScene("WinScene");
             }
+
+        }
             gameManager.IsConquered = true;
           
        

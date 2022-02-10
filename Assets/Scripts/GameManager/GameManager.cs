@@ -8,10 +8,15 @@ public class GameManager : ScriptableObject
     public UnityAction<int, int, bool> OnFlagConquered;
     public UnityAction OnPLayerCatch;
 
-    public UnityAction OnGameEnd;
+   
 
     private int flagGro1num = 4;
     private int flagGro2num = 4;
+
+    public UnityAction<bool> OnGro1Win;
+    public UnityAction<bool> OnGro2Win;
+    private bool is1GroWin;
+    private bool is2GroWin;
 
     private bool isConquered = false;
 
@@ -19,6 +24,12 @@ public class GameManager : ScriptableObject
     //private bool isAddScore;
     //private bool isPicUp;
     private bool thePlayerCaught;
+
+    private void Awake()
+    {
+        flagGro1num = 4;
+        flagGro2num = 4;
+    }
 
     public bool IsConquered
     {
@@ -41,10 +52,16 @@ public class GameManager : ScriptableObject
 
         get { return flagGro1num; }
         set { flagGro1num = value;
-            if (flagGro1num < 0)
-            {
-                flagGro1num = 0;
-            }
+            //if (flagGro1num < 0)
+            //{
+            //    flagGro1num = 0;
+            //}
+            ///*else */if (flagGro1num == 8)
+            //{
+            //    is1GroWin = true;
+            //    Debug.Log("hhhhh");
+            //    OnGro1Win?.Invoke(is1GroWin);
+            //}
         }
 
     }
@@ -53,10 +70,16 @@ public class GameManager : ScriptableObject
     {
         get { return flagGro2num; }
         set { flagGro2num = value;
-            if (flagGro2num < 0)
-            {
-                flagGro2num = 0;
-            }
+            //if (flagGro2num < 0)
+            //{
+            //    flagGro2num = 0;
+            //}
+            ///*else */if (flagGro2num == 8)
+            //{
+            //    is2GroWin = true;
+            //    Debug.Log("hhhhh");
+            //    OnGro2Win?.Invoke(is2GroWin);
+            //}
         }
     }
 
@@ -71,9 +94,5 @@ public class GameManager : ScriptableObject
         }
     }
 
-    private void Awake()
-    {
-          flagGro1num = 4;
-          flagGro2num = 4;
-    }
+    
 }

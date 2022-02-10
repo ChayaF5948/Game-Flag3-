@@ -42,8 +42,8 @@ public class UiManager : MonoBehaviour
     {
         if (conquered )
         {
-            flagTextP1.text = $"flags:{flagsP1.ToString()}";
-            flagTextP2.text = $"flags:{flagsP2.ToString()}";
+            flagTextP1.text = $"{flagsP1.ToString()}";
+            flagTextP2.text = $"{flagsP2.ToString()}";
         }  
     }
 

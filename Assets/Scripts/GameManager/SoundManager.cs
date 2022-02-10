@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private PlayerHPdata playerHPdata;
     private AddAbility AddAbility;
     private SwitchPlayers switchPlayers;
     private PlayerAbility playerAbility;
@@ -26,6 +28,9 @@ public class SoundManager : MonoBehaviour
     {
         audioSource = this.GetComponent<AudioSource>();
         gameManager.OnFlagConquered += PlaySound;
+        playerHPdata.OnAddOrDecreaseBullet += PlayBulletSound;
+        playerHPdata.OnAddScore += PlayAddScoreSound;
+        playerHPdata.OnShoot += PlayShootSound;
     }
 
     //private void Update()
@@ -42,39 +47,35 @@ public class SoundManager : MonoBehaviour
         {
             audioSource.clip = audioClips[0];
             audioSource.Play();
-            Debug.Log("The ChangeField sound is play");
+            
         }
         else if(flagsP1 <= 0|| flagsP2 <= 0)
         {
             audioSource.clip = audioClips[1];
             audioSource.Play();
         }
-        //else if (AddAbility.IsAddScore)
-        //{
-        //    audioSource.clip = audioClips[3];
-        //    audioSource.Play();
-        //}
-        //else if(AddAbility.IsAddBullet )
-        //{
-        //    audioSource.clip = audioClips[4];
-        //    audioSource.Play();
-        //}
-        //else if(switchPlayers.Icaught)
-        //{
-        //    audioSource.clip = audioClips[5];
-        //    audioSource.Play();
-        //}
-        //else if (playerAbility.CanShoot)
-        //{
-        //    audioSource.clip = audioClips[6];
-        //    audioSource.Play();
-        //}
-        //else if (AddAbility.IsPickUp)
-        //{
-        //    audioSource.clip = audioClips[7];
-        //    audioSource.Play();
-        //}
+  
 
+    }
+    private void PlayBulletSound(int bullet )
+    {
+        audioSource.clip = audioClips[2];
+        audioSource.Play();
+        Debug.Log("Bullet sound play");
+    }
+
+    private void PlayAddScoreSound(int score)
+    {
+        audioSource.clip = audioClips[3];
+        audioSource.Play();
+        Debug.Log("score sound play");
+    }
+
+    private void PlayShootSound()
+    {
+        audioSource.clip = audioClips[4];
+        audioSource.Play();
+        Debug.Log("Shoot sound play");
     }
 
 }

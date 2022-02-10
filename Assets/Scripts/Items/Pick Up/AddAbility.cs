@@ -38,6 +38,10 @@ public class AddAbility : MonoBehaviour
             else if (type == PicUpType.speed)
             {
                 datas.playerData.Score = datas.playerData.Score +1;
+                if(datas.playerData.Score >= 2)
+                {
+                    Debug.Log("Add speed");
+                }
                 //isAddScore = true;
                 Debug.Log("Score:" + datas.playerData.Score);
                

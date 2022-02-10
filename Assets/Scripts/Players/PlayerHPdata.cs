@@ -8,7 +8,12 @@ public class PlayerHPdata : ScriptableObject
     private int score;
     private int bullets;
     private int currentbullet = 15;
-    
+
+    private void Awake()
+    {
+        bullets = 0;
+        Score = 0;
+    }
 
     //private bool isShoot;
 
@@ -68,10 +73,6 @@ public class PlayerHPdata : ScriptableObject
 
     
 
-    private void Awake()
-    {
-        bullets = 0;
-        Score = 0;
-    }
+    
 
 }
